@@ -1,0 +1,92 @@
+/* 
+
+Esta es una hora de estilos
+Basada en CSS grid para diagramar
+
+*/
+
+main{
+    font-size: 1em;
+    display: grid;
+    grid-gap: 0; /* Innecesario si es 0*/
+    grid-gap: 10px;
+    grid-template-areas:
+        "header"
+        "nav"
+        "article"
+        "aside"
+        "publi"
+        "footer";
+}
+
+header{
+    background: pink;
+    grid-area: header;
+}
+
+header p{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background: yellow;
+    grid-area: nav;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+article{
+    background: lightblue;
+    grid-area: article;
+}
+
+aside{
+    background: lightgreen;
+    grid-area: aside;
+}
+
+#publi{
+    background: lightgrey;
+    grid-area: publi;
+}
+
+footer{
+    background: salmon;
+    grid-area: footer;
+}
+
+@media (min-width: 500px){
+
+    main{
+        font-size: 2em;
+        grid-template-columns: 1fr 400px;
+        grid-template-areas:
+            "header     header"
+            "nav        article"
+            "nav        aside"
+            "nav        publi"
+            "footer     footer";
+    }
+}
+@media (min-width: 700px){
+
+    main{
+        grid-template-columns: 10% 1fr 1fr;
+        grid-template-areas:
+            "header     header      header"
+            "nav        nav         nav"
+            "publi      article     aside"
+            "footer     footer      footer";
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
